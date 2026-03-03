@@ -1,0 +1,249 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f9ff;
+    color: #222;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 123, 255, 0.85);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* SECTION */
+.section {
+    padding: 120px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* HOME */
+.home {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
+    padding-top: 180px;
+    border-radius: 0 0 50px 50px;
+}
+
+.home h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.home h3 {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.home p {
+    margin: 15px 0;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* SKILLS */
+.skill {
+    margin: 25px auto;
+    width: 70%;
+    text-align: left;
+}
+
+.skill p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.progress {
+    background: #e0e0e0;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 20px;
+    animation: loadBar 2s ease-in-out;
+}
+
+@keyframes loadBar {
+    from { width: 0; }
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: white;
+    width: 320px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* FORM */
+form {
+    margin-top: 25px;
+}
+
+input, textarea {
+    width: 70%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 40px 40px 0 0;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+.dark-mode header {
+    background: rgba(20,20,20,0.95);
+}
+
+.dark-mode .project-card {
+    background: #1e1e1e;
+}
+
+.dark-mode .progress {
+    background: #333;
+}
+
+.dark-mode footer {
+    background: #1e1e1e;
+}
+
+.dark-mode .btn {
+    background: #333;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .home h1 {
+        font-size: 30px;
+    }
+
+    .skill,
+    input,
+    textarea {
+        width: 90%;
+    }
+}
